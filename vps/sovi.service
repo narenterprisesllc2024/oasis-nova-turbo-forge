@@ -1,0 +1,15 @@
+[Unit]
+Description=Sovi Gateway
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/sovi/vps
+EnvironmentFile=/opt/sovi/vps/.env
+ExecStart=/usr/bin/node /opt/sovi/vps/server.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

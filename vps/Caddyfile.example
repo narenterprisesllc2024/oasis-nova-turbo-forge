@@ -1,0 +1,6 @@
+# Point a public hostname at this gateway, then paste that URL into the HUD LINK panel.
+# Replace sovi.yourdomain.com with your real host.
+
+sovi.yourdomain.com {
+  reverse_proxy sovi-gateway:8787
+}

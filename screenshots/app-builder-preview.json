@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Sovi",
+      "hasCanvas": false,
+      "bodyTextLen": 312,
+      "bodyTextHash": "dcd2864425a4ce90c83aa07324f469478f96fbe2a00155fd3a12a361dabb41d0",
+      "bodyTextPrefix": "IDENTITY GATE SOVI SOVEREIGN OS --:--:-- SYSTEM TIME LOCK BIOMET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Sovi",
+      "hasCanvas": false,
+      "bodyTextLen": 312,
+      "bodyTextHash": "fe8637d53ef29ee2ed5fa13fca24e603e0cb1d2119b681bf1cdbf03eb549e533",
+      "bodyTextPrefix": "IDENTITY GATE SOVI SOVEREIGN OS 21:25:23 SUN, AUG 30 LOCK BIOMET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

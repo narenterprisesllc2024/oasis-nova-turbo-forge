@@ -1,0 +1,17 @@
+node_modules
+dist
+.output
+.vinxi
+.nitro
+.tanstack
+.env
+.env.*
+!.env.example
+vps/.env
+vps/data
+artifacts
+.grok
+AGENTS.md
+AGENTS.project.md
+*.log
+.DS_Store

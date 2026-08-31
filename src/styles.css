@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #04080f;
+  --color-surface: #071018;
+  --color-panel: #0b1824;
+  --color-fg: #d8f6ff;
+  --color-muted: #6e93a8;
+  --color-cyan: #3ee8ff;
+  --color-cyan-dim: #1a6d80;
+  --color-line: #163044;
+  --color-warn: #e8a54b;
+  --color-crit: #ff5a6a;
+  --color-ok: #3effb2;
+  --color-void: #02050a;
+
+  --font-display: "Rajdhani", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  --text-2xs: 0.625rem;
+  --text-hud: 0.6875rem;
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius: 4px;
+
+  --shadow-hud: 0 0 0 1px color-mix(in srgb, var(--color-cyan) 28%, transparent),
+    0 0 24px color-mix(in srgb, var(--color-cyan) 10%, transparent);
+  --shadow-core: 0 0 18px color-mix(in srgb, var(--color-cyan) 55%, transparent),
+    0 0 48px color-mix(in srgb, var(--color-cyan) 22%, transparent);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-display);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-cyan) 35%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@layer components {
+  .hud-grid {
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--color-cyan) 7%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--color-cyan) 7%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center;
+  }
+
+  .hud-scan {
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      color-mix(in srgb, var(--color-void) 28%, transparent) 3px
+    );
+    mix-blend-mode: multiply;
+    opacity: 0.35;
+  }
+
+  .hud-vignette {
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 42%, var(--color-void) 100%);
+  }
+
+  .hud-panel {
+    background: color-mix(in srgb, var(--color-panel) 82%, transparent);
+    box-shadow: var(--shadow-hud);
+    border: 1px solid color-mix(in srgb, var(--color-cyan) 22%, transparent);
+  }
+
+  .hud-bracket {
+    position: relative;
+  }
+
+  .hud-bracket::before,
+  .hud-bracket::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--color-cyan);
+    border-style: solid;
+    opacity: 0.7;
+  }
+
+  .hud-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .hud-readout {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+
+  .hud-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 1rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-bg);
+    background: var(--color-cyan);
+    border: 1px solid var(--color-cyan);
+    transition:
+      opacity 150ms ease-out,
+      transform 150ms ease-out,
+      background-color 150ms ease-out,
+      color 150ms ease-out;
+  }
+
+  .hud-btn:hover {
+    opacity: 0.92;
+  }
+
+  .hud-btn:active {
+    transform: scale(0.96);
+  }
+
+  .hud-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .hud-btn-ghost {
+    color: var(--color-cyan);
+    background: color-mix(in srgb, var(--color-cyan) 8%, transparent);
+  }
+
+  .hud-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-fg);
+    background: color-mix(in srgb, var(--color-void) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-cyan) 28%, transparent);
+    outline: none;
+    transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+  }
+
+  .hud-input::placeholder {
+    color: var(--color-muted);
+  }
+
+  .hud-input:focus {
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-cyan) 45%, transparent);
+  }
+
+  .core-glow {
+    box-shadow: var(--shadow-core);
+  }
+}
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ring-spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes core-pulse {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes boot-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes scan-sweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes dash-move {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes listen-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.anim-ring {
+  animation: ring-spin 48s linear infinite;
+}
+
+.anim-ring-rev {
+  animation: ring-spin-rev 32s linear infinite;
+}
+
+.anim-core {
+  animation: core-pulse 2.6s ease-in-out infinite;
+}
+
+.anim-boot {
+  animation: boot-rise 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-listen {
+  animation: listen-breathe 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-ring,
+  .anim-ring-rev,
+  .anim-core,
+  .anim-listen {
+    animation: none;
+  }
+
+  .anim-boot {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

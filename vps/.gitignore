@@ -1,0 +1,4 @@
+.env
+data/
+*.token
+node_modules

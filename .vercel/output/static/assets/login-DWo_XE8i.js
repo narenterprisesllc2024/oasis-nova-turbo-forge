@@ -1,0 +1,1 @@
+import{i as e,r as t}from"./index-DTvcnTxa.js";import{c as n,n as r,t as i}from"./login-form-DMwjcGDP.js";var a=e();function o(){let{user:e,isPending:o}=n();return!o&&e?(0,a.jsx)(t,{to:`/`}):(0,a.jsx)(r,{kicker:`Identity gate`,title:`LOCK`,children:(0,a.jsx)(i,{})})}export{o as component};

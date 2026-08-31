@@ -1,0 +1,17 @@
+{
+  "name": "sovi-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenAI-compatible gateway that links the Sovi HUD to a VPS stack",
+  "bin": {
+    "sovi-gateway": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

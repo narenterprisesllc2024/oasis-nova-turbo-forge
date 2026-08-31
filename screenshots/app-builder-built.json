@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Sovi",
+      "hasCanvas": false,
+      "bodyTextLen": 312,
+      "bodyTextHash": "6aa11d37ef2b57d6e54e222009acc850b91a27ec3b3c37303cdcf2ca2e4b9e28",
+      "bodyTextPrefix": "IDENTITY GATE SOVI SOVEREIGN OS 21:25:25 SUN, AUG 30 LOCK BIOMET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Sovi",
+      "hasCanvas": false,
+      "bodyTextLen": 312,
+      "bodyTextHash": "9d0c6cdaba496df2a200550fcd6183e638446a0cf57a7ff7d45b66d009301d85",
+      "bodyTextPrefix": "IDENTITY GATE SOVI SOVEREIGN OS 21:25:27 SUN, AUG 30 LOCK BIOMET",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text replaced (similar length, page start changed)",
+    "mobile: body text replaced (similar length, page start changed)"
+  ]
+}
